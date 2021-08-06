@@ -29,8 +29,14 @@ let posts = [];
 
 
 app.get("/", function(req, res){
-  console.log(posts);
-  res.render("home", {p1 : homeStartingContent});
+  
+  /* for (var key in posts) 
+  {
+    var value = posts[key];
+    console.log(key, value);
+  } */
+
+  res.render("home", {p1 : homeStartingContent, posts : posts}, );
 })
 
 
@@ -72,6 +78,6 @@ app.post("/compose", function(req, res){
 
 
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(3030, function() {
+  console.log("Server started on port 3030");
 });

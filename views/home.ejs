@@ -4,4 +4,19 @@
 
 <p> <%= p1 %>  </p>
 
+
+<ul>
+    <% for (var i = 0; i < posts.length; i++) 
+    { %> 
+
+       <% var object = posts[i]; %>
+
+        <li>
+            <h3> <%= object.title %> </h3>
+            <h4> <%= object.postComments %></h4>
+        </li>
+
+    <% } %>   
+</ul>
+
 <%- include("partials/footer.ejs") %> 
