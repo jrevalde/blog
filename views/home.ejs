@@ -13,17 +13,15 @@
 
         <li>
             <h3> <%= object.title %> </h3>
-            <h4 style="white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100ch;
-"> <%= object.postComments %></h4>
+            <h4> <%= object.postComments.substring(0,100) + " ..." %></h4> <a href="/posts/<%= object.title %>">Read More</a>
         </li>
 
     <% } %>   
 </ul>
 
+<hr>
 
-<a style="padding-top: 15px;" href="/compose">New Post</a>
+
+<a class="btn btn-primary" style="padding-top: 15px;" href="/compose">New Post +</a>
 
 <%- include("partials/footer.ejs") %> 

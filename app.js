@@ -87,7 +87,8 @@ app.get("/posts/:cummus", function(req, res){
       //console.log("match found.");
       res.render("post", {theTitle : post.title, paragraph : post.postComments});
     }
-    else{
+    else
+    {
       console.log("no match.");
     }
   });
