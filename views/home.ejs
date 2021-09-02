@@ -14,6 +14,11 @@
         <li>
             <h3> <%= object.title %> </h3>
             <h4> <%= object.content.substring(0,100) + " ..." %></h4> <a href="/posts/<%= object.title %>">Read More</a>
+            <br>
+            <form action="/delete" method="post">
+                <button name="remove" value="<%= object._id %>" type="submit">Delete</button>
+            </form>
+            
         </li>
 
     <% } %>   

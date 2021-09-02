@@ -124,7 +124,11 @@ app.get("/posts/:cummus", function(req, res){
   });*/
 });
 
+app.post("/delete", function(req, res){
+    const remove = req.body.remove;
 
+    console.log(remove); // just checks that we do in fact recieve the Object ID (yes we do.);
+});
 
 
 
@@ -133,3 +137,12 @@ app.get("/posts/:cummus", function(req, res){
 app.listen(3030, function() {
   console.log("Server started on port 3030");
 });
+
+
+/* IMPLEMENTATION LIST
+
+1. Delete blog post
+2. pop up that says "are you sure you want to remove this post?" and then it deletes the post if they click yes.
+2. optionally include and display image with blog post.
+
+*/
