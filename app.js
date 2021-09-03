@@ -1,4 +1,6 @@
 const express = require("express");
+const multer = require('multer');
+//const formData = require("express-form-data");
 //const bodyParser = require("body-parser");
 const https = require("https");
 const ejs = require("ejs");
@@ -128,6 +130,14 @@ app.post("/delete", function(req, res){
     const remove = req.body.remove;
 
     console.log(remove); // just checks that we do in fact recieve the Object ID (yes we do.);
+
+    Blog.findByIdAndRemove(remove.trim(), function(err){
+       if(!err)
+       {
+         console.log("succesful deletion.");
+         res.redirect("/");
+       }
+    });
 });
 
 
@@ -141,7 +151,7 @@ app.listen(3030, function() {
 
 /* IMPLEMENTATION LIST
 
-1. Delete blog post
+1. Delete blog post (Completed)
 2. pop up that says "are you sure you want to remove this post?" and then it deletes the post if they click yes.
 2. optionally include and display image with blog post.
 
